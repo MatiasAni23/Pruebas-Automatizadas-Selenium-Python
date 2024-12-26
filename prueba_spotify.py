@@ -48,7 +48,7 @@ class TestSpotify(unittest.TestCase):
         
             time.sleep(5)
 
-        #Quitar el mensaje de cookies
+        # Quitar el mensaje de cookies
         try:
             quitar_mensaje_cookies = WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located((By.XPATH, "//button[@aria-label='Cerrar']"))
@@ -61,7 +61,7 @@ class TestSpotify(unittest.TestCase):
             time.sleep(3)
 
 
-        # Hacer clic en el botón iniciar sesión para acceder al formulario
+        # Hacer click en el botón iniciar sesión para acceder al formulario
         try:
             boton_inicio = WebDriverWait(self.driver, 30).until(
                 EC.element_to_be_clickable((By.CLASS_NAME, "Button-sc-qlcn5g-0"))
@@ -118,12 +118,12 @@ class TestSpotify(unittest.TestCase):
         fin_carga = time.time()
         carga_tiempo = fin_carga - inicio_ejecucion
 
-        #Imprimir el tiempo de carga
+        # Imprimir el tiempo de carga
         print(f"El tiempo de carga desde el clic en 'Iniciar sesión' es de: {carga_tiempo:.2f} segundos.")
         time.sleep(2)
 
 
-    #Testeo para utilizar la barra de búsqueda
+    # Testeo para utilizar la barra de búsqueda
 
     def test_02_buscar_musica(self):
         url = "https://open.spotify.com/"
@@ -148,12 +148,12 @@ class TestSpotify(unittest.TestCase):
         time.sleep(5)
 
 
-        #Reproducir canción haciendo doble click al div que contiene la canción que quiero
+        # Reproducir canción haciendo doble click al div que contiene la canción que quiero
         try:
             reproducir_cancion = WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located((By.CLASS_NAME, "w46g_LQVSLE9xK399VYf"))
             )
-        #Utilizamos ActionChains para realizar la acción de doble click
+        # Utilizamos ActionChains para realizar la acción de doble click
             accion = ActionChains(self.driver)
             accion.double_click(reproducir_cancion).perform()
              
@@ -165,7 +165,8 @@ class TestSpotify(unittest.TestCase):
         time.sleep(20)
 
 
-
+    # Testeo para pausar canción
+    
     def test_03_pausar_cancion(self):
 
         try:
