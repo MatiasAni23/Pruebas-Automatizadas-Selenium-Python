@@ -1,3 +1,5 @@
+#Importaciones necesarias para el correcto funcionamiento del código
+#Ejecutar en consola pip install selenium
 import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -22,7 +24,7 @@ class Pruebas_Ripley(unittest.TestCase):
 
     #Ruta para guardar capturas
 
-    OUTPUT_BASE_PATH = 'C:/Users/matil/Documents/Pruebas Selenium/Test_ripley'
+    OUTPUT_BASE_PATH = ''
 
     #Definir intervalos de capturas
 
@@ -117,8 +119,8 @@ class Pruebas_Ripley(unittest.TestCase):
         
         #Agregar credenciales aquí
         credentials={
-            'rut': '214025515',
-            'contrasena': 'Matias_2003'
+            'rut': '',
+            'contrasena': ''
         }
 
         inicio_boton = time.time()
