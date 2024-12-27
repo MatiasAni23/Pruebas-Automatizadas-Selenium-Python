@@ -121,8 +121,8 @@ class Pruebas_Ripley(unittest.TestCase):
         
         #Agregar credenciales aquí
         credentials={
-            'rut': '214025515',
-            'contrasena': 'Matias_2003'
+            'rut': '',
+            'contrasena': ''
         }
 
         inicio_boton = time.time()
