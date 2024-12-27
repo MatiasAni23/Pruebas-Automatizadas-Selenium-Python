@@ -1,5 +1,5 @@
 #Importaciones necesarias para el correcto funcionamiento del código
-#Ejecutar pip install selenium
+#Ejecutar en consola pip install selenium
 import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
