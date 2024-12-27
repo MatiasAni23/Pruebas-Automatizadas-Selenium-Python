@@ -105,7 +105,7 @@ class Pruebas_Ripley(unittest.TestCase):
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
         except Exception as e:
-            print("Error al cargar la página: {e}")
+            print(f"Error al cargar la página: {e}")
         fin = time.time()
         carga = fin - inicio
         print(f"El tiempo de carga de la pagina es de: {carga:.2f} segundos")
@@ -132,7 +132,7 @@ class Pruebas_Ripley(unittest.TestCase):
             presionar_boton.click()
             print("El botón se ha presionado correctamente")
         except Exception as e:
-            print("Error al presionar el botón")
+            print(f"Error al presionar el botón: {e}")
 
 
 
@@ -157,7 +157,7 @@ class Pruebas_Ripley(unittest.TestCase):
             print("El rut se ha ingresado correctamente")
             time.sleep(2)
         except Exception as e:
-            print("Error al ingresar el rut")
+            print(f"Error al ingresar el rut: {e}")
 
         #Ingresar contraseña
         try:
@@ -168,7 +168,7 @@ class Pruebas_Ripley(unittest.TestCase):
             print("La contraseña se ha ingresado correctamente")
 
         except Exception as e:
-            print(f"Error al ingresar la contraseña")
+            print(f"Error al ingresar la contraseña: {e}")
 
         #Presionar botón Iniciar sesión
 
@@ -182,7 +182,7 @@ class Pruebas_Ripley(unittest.TestCase):
             
 
         except Exception as e:
-            print(f"Error al presionar el botón de iniciar sesión {e}")
+            print(f"Error al presionar el botón de iniciar sesión: {e}")
             
         
 
@@ -194,7 +194,7 @@ class Pruebas_Ripley(unittest.TestCase):
             )
             print("Redirección detectada")
         except Exception as e:
-            print(f"Error al detectar la redirección {e}")
+            print(f"Error al detectar la redirección: {e}")
             
         
 
@@ -204,7 +204,7 @@ class Pruebas_Ripley(unittest.TestCase):
             )
             print("La página se ha cargado correctamente")
         except Exception as e:
-            print("Error al cargar la página: {e}")
+            print(f"Error al cargar la página: {e}")
             
 
         fin_carga = time.time()
@@ -229,7 +229,7 @@ class Pruebas_Ripley(unittest.TestCase):
             print("Se ha presionado correctamente la barra de búsqueda")
             time.sleep(2)
         except Exception as e:
-            print("Error al presionar la barra de búsqueda")
+            print(f"Error al presionar la barra de búsqueda: {e}")
 
         #Ingresar datos o producto a buscar
 
@@ -242,7 +242,7 @@ class Pruebas_Ripley(unittest.TestCase):
             buscar_producto.send_keys(Keys.ENTER)
             print("El producto a buscar se ha ingresado correctamente")
         except Exception as e:
-            print(f"Error al ingresar el producto a buscar {e}")
+            print(f"Error al ingresar el producto a buscar: {e}")
 
         fin_busqueda = time.time()
         carga_busqueda = fin_busqueda - inicio_busqueda
@@ -276,7 +276,7 @@ class Pruebas_Ripley(unittest.TestCase):
             )
             print("La página se ha cargado correctamente")
         except Exception as e:
-            print("Error al cargar la página: {e}")
+            print(f"Error al cargar la página: {e}")
             
 
         fin_seleccion = time.time()
@@ -318,7 +318,7 @@ class Pruebas_Ripley(unittest.TestCase):
             presionar_boton.click()
             print("El botón de cuenta se ha presionado correctamente")
         except Exception as e:
-            print(f"Error al presionar el botón {e}")
+            print(f"Error al presionar el botón: {e}")
 
 
         #Click para redirigir a la cuenta
@@ -331,7 +331,7 @@ class Pruebas_Ripley(unittest.TestCase):
             presionar_cuenta.click()
             print("Se ha presionado la cuenta correctamente")
         except Exception as e:
-            print(f"Error al presionar la cuenta {e}")
+            print(f"Error al presionar la cuenta: {e}")
 
         try:
             WebDriverWait(self.driver, 30).until(
