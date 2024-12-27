@@ -28,7 +28,7 @@ class Pruebas_Ripley(unittest.TestCase):
 
     #Definir intervalos de capturas
     
-    SCREENSHOT_INTERVAL = 0.3
+    SCREENSHOT_INTERVAL = 0.2
 
 
 
@@ -60,10 +60,6 @@ class Pruebas_Ripley(unittest.TestCase):
         cls.screenshot_dir = os.path.join(cls.OUTPUT_BASE_PATH, f"grabacion_{cls.test_timestamp}")
         os.makedirs(cls.screenshot_dir, exist_ok=True)
         
-        # Archivo de log con timestamps
-        cls.log_file = os.path.join(cls.screenshot_dir, "performance_log.txt")
-        with open(cls.log_file, 'w', encoding='utf-8') as f:
-            f.write("Tiempo,Acción,Duración\n")
 
         # Iniciar grabación continua
         cls.frame_count = 0
