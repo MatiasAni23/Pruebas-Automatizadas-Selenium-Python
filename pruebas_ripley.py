@@ -22,7 +22,7 @@ class Pruebas_Ripley(unittest.TestCase):
 
     #Ruta para guardar capturas
 
-    OUTPUT_BASE_PATH = 'C:/Users/matil/Documents/Pruebas Selenium/Test_ripley'
+    OUTPUT_BASE_PATH = ''
 
     #Definir intervalos de capturas
     
