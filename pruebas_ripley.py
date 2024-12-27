@@ -94,6 +94,7 @@ class Pruebas_Ripley(unittest.TestCase):
         with open(self.log_file, 'a') as f:
             f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
 
+    #Testeo para medir el tiempo de carga de la página
 
     def test_01_carga_pagina(self):
         
@@ -114,6 +115,7 @@ class Pruebas_Ripley(unittest.TestCase):
 
         time.sleep(2)
         
+    #Testeo para iniciar sesión y medir cuanto tiempo se demora en cada acción
 
     def test_02_iniciar_sesion(self):
         
@@ -197,6 +199,7 @@ class Pruebas_Ripley(unittest.TestCase):
             print(f"Error al detectar la redirección: {e}")
             
         
+        #Medir tiempo de carga de la pagina
 
         try:
             WebDriverWait(self.driver, 30).until(
@@ -216,6 +219,8 @@ class Pruebas_Ripley(unittest.TestCase):
 
         time.sleep(3)
     
+    #Testeo para buscar producto y cuanto se demora
+
     def test_03_buscar_producto(self):
 
         
@@ -255,7 +260,7 @@ class Pruebas_Ripley(unittest.TestCase):
 
         time.sleep(2)
 
-    #Testeo para seleccionar producto
+    #Testeo para seleccionar producto y cuanto se demora en transición de paginas
 
     def test_04_seleccionar_producto(self):
 
@@ -306,7 +311,8 @@ class Pruebas_Ripley(unittest.TestCase):
             print(f"No se pudo agregar el producto al carrito: {e}")
     
 
-    # Testeo para ver el perfil
+    # Testeo para ver el perfil y cuanto se demora cada componente dentro de la pagina
+
     def test_06_ver_perfil(self):
 
         time.sleep(5)
@@ -388,6 +394,8 @@ class Pruebas_Ripley(unittest.TestCase):
         fin_cuenta = time.time()
         tiempo_carga = fin_cuenta - inicio_cuenta
         
+
+        #Imprimir resultados
         print(f"El tiempo de carga del componente 'Mis datos personales' es de: {carga_datos:.2f} segundos")
         print(f"El tiempo de carga del contenedor izquierdo es de: {carga_contenedor:.2f} segundos")
         print(f"El tiempo de carga del contenedor de ripley puntos es de: {carga_puntos:.2f} segundos")
