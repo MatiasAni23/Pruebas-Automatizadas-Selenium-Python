@@ -1,0 +1,11 @@
+Registro de tiempos de carga - Ripley.cl
+==================================================
+2024-12-27 15:49:04 - Carga de página principal: 2.91 segundos
+2024-12-27 15:49:07 - Carga de página luego de presionar el botón de inicio de sesión hasta el formulario: 1.73 segundos
+2024-12-27 15:49:12 - Carga de página luego de presionar el botón de inicio de sesión: 0.22 segundos
+2024-12-27 15:49:23 - Carga de página al realizar búsqueda: 3.11 segundos
+2024-12-27 15:49:29 - Carga de página luego de presionar el botón de inicio de sesión: 3.76 segundos
+2024-12-27 15:49:47 - El tiempo de carga del componente 'Mis datos personales': 4.86 segundos
+2024-12-27 15:49:47 - El tiempo de carga del contenedor izquierdo: 4.87 segundos
+2024-12-27 15:49:47 - El tiempo de carga del contenedor de ripley puntos: 5.98 segundos
+2024-12-27 15:49:47 - Carga de página luego de presionar el botón de cuenta: 5.99 segundos
