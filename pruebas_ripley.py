@@ -53,7 +53,7 @@ class Pruebas_Ripley(unittest.TestCase):
         cls.test_timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         
 
-        # Usar la ruta base, si no existe, crear una
+        # Usar la ruta base
         if not os.path.exists(cls.OUTPUT_BASE_PATH):
             os.makedirs(cls.OUTPUT_BASE_PATH)
             
@@ -237,7 +237,8 @@ class Pruebas_Ripley(unittest.TestCase):
             buscar_producto = WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/main/section/nav/main/nav/div/form/input'))
             )
-            buscar_producto.send_keys("Layton Parfums de Marly")
+            buscar_producto.send_keys("TOM FORD TOBACCO VANILLE")
+            time.sleep(2)
             inicio_busqueda = time.time()
             buscar_producto.send_keys(Keys.ENTER)
             print("El producto a buscar se ha ingresado correctamente")
@@ -333,6 +334,8 @@ class Pruebas_Ripley(unittest.TestCase):
         except Exception as e:
             print(f"Error al presionar la cuenta: {e}")
 
+
+        #Carga componente Mis datos personales
         try:
             WebDriverWait(self.driver, 30).until(
                 EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[2]/div"))
@@ -341,6 +344,38 @@ class Pruebas_Ripley(unittest.TestCase):
         except Exception as e:
             print(f"Error al cargar el componente 'Mis datos personales': {e}")
 
+
+        fin_datos = time.time()
+        carga_datos = fin_datos - inicio_cuenta
+
+
+        #Carga componente contenedor izquierdo
+        try:
+            WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div'))
+            )
+            
+            print("El contenedor izquierdo se ha cargado correctamente")
+        except Exception as e:
+            print(f"Error al cargar el contenedor: {e}")
+
+        fin_contenedor = time.time()
+        carga_contenedor = fin_contenedor - inicio_cuenta
+
+
+        #Carga ripley puntos
+        try:
+            WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[1]/a/div'))
+            )
+        except Exception as e:
+            print(f"Error al cargar el contenedor de ripley puntos: {e}")
+
+        fin_puntos = time.time()
+        carga_puntos = fin_puntos - inicio_cuenta
+
+
+        #Carga página completa
         try:
             WebDriverWait(self.driver, 30).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
@@ -352,10 +387,16 @@ class Pruebas_Ripley(unittest.TestCase):
 
         fin_cuenta = time.time()
         tiempo_carga = fin_cuenta - inicio_cuenta
-        self.log_performance("El tiempo de carga del componente 'Mis datos personales'", inicio_cuenta, fin_cuenta)
-        print(f"El tiempo de carga del componente 'Mis datos personales' es de: {tiempo_carga:.2f} segundos")
+        
+        print(f"El tiempo de carga del componente 'Mis datos personales' es de: {carga_datos:.2f} segundos")
+        print(f"El tiempo de carga del contenedor izquierdo es de: {carga_contenedor:.2f} segundos")
+        print(f"El tiempo de carga del contenedor de ripley puntos es de: {carga_puntos:.2f} segundos")
         print(f"El tiempo de carga despúes de presionar el botón de cuenta es de: {tiempo_carga:.2f} segundos")
 
+        #Almacenar resultados
+        self.log_performance("El tiempo de carga del componente 'Mis datos personales'", inicio_cuenta, fin_datos)
+        self.log_performance("El tiempo de carga del contenedor izquierdo", inicio_cuenta, fin_contenedor)
+        self.log_performance("El tiempo de carga del contenedor de ripley puntos", inicio_cuenta, fin_puntos)
         self.log_performance("Carga de página luego de presionar el botón de cuenta", inicio_cuenta, fin_cuenta)
 
         time.sleep(2)
