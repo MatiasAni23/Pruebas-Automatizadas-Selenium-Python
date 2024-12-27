@@ -53,7 +53,7 @@ class Pruebas_Ripley(unittest.TestCase):
         cls.test_timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         
 
-        # Usar la ruta base
+        # Usar la ruta base, si no existe, crear una
         if not os.path.exists(cls.OUTPUT_BASE_PATH):
             os.makedirs(cls.OUTPUT_BASE_PATH)
             
