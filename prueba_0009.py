@@ -149,7 +149,7 @@ class Pruebas_retail(unittest.TestCase):
 
     @classmethod
     def create_excel_report(cls):
-        #Si el archivo existe, sobreescribir dicho archivo
+        #Verificar si el archivo existe
         if os.path.exists(cls.excel_file):
             cls.workbook = openpyxl.load_workbook(cls.excel_file)
             cls.sheet = cls.workbook.active
