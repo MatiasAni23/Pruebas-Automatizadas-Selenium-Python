@@ -128,7 +128,7 @@ class Pruebas_retail(unittest.TestCase):
     def iniciar_grabacion(self, hwnd, output_file):
         # Comandos FFmpeg usando `hwnd`
         ffmpeg_cmd = [
-            "C:/webm/bin/ffmpeg", #Ruta FFmpeg
+            "C:/webm/bin/ffmpeg", #Ruta FFmpeg (En este caso la misma del PATH)
             "-f", "gdigrab", #Formato de captura
             "-i", f"hwnd={hwnd}", #Pasar el HWND como entrada
             "-framerate", "30", #Framerate
