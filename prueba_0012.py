@@ -22,8 +22,8 @@ import os
 
 
 class Pruebas_retail(unittest.TestCase):
-    output_folder = "C:/Users/matil/Documents/Pruebas Selenium/Test_retail/Pruebas" #Carpeta de salida para los videos
-    CHROME_DRIVER_PATH = "C:/Users/matil/Documents/Pruebas Selenium/chromedriver.exe" #Ruta del driver de Chrome
+    output_folder = "" #Carpeta de salida para los videos
+    CHROME_DRIVER_PATH = "" #Ruta del driver de Chrome
 
     CREDENTIALS = {'email': '', 'password': '', 'password2': '',  'rut': ''}
 
